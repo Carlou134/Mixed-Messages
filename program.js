@@ -54,8 +54,6 @@ function CompleteMessage(){
     {
         return 'Error in the creation of the message';
     }
-
-
 }
 
 console.log(CompleteMessage());
