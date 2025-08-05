@@ -38,8 +38,24 @@ const jokesAndMessages = [
 ];
 
 function CompleteMessage(){
-    const randomizer = Math.floor(Math.random() * astrologyMessages.length);
-    return randomizer;
+    let message = ''
+    const randomizerFirst = Math.floor(Math.random() * astrologyMessages.length);
+    const randomizerSecond = Math.floor(Math.random() * motivationalMessages.length);
+    const randomizerThird = Math.floor(Math.random() * jokesAndMessages.length);
+    
+    if((randomizerFirst >= 0 && randomizerFirst < astrologyMessages.length)
+    && (randomizerSecond >= 0 && randomizerSecond < motivationalMessages.length)
+    && (randomizerThird >= 0 && randomizerThird < jokesAndMessages.length))
+    {
+        message = astrologyMessages[randomizerFirst] + ' ' + motivationalMessages[randomizerSecond] + ' ' + jokesAndMessages[randomizerThird];
+        return message;
+    }
+    else
+    {
+        return 'Error in the creation of the message';
+    }
+
+
 }
 
 console.log(CompleteMessage());
